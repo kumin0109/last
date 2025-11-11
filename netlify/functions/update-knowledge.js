@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
 
   try {
     const DID_API_KEY = process.env.DID_API_KEY;
-    const AGENT_ID = process.env.AGENT_ID || 'v2_agt_UcvqQ_-y';
+    const AGENT_ID = 'v2_agt_UcvqQ_-y';  // ← 퀴즈 Agent ID
 
     if (!DID_API_KEY) {
       throw new Error('DID_API_KEY 환경변수가 설정되지 않았습니다');
@@ -30,7 +30,28 @@ exports.handler = async (event, context) => {
     const { studentName, question, answer, isCorrect } = JSON.parse(event.body);
     const timestamp = new Date().toLocaleString('ko-KR');
     
-    // Step 1: Knowledge Base 생성 + 텍스트 직접 추가
+    // Step 1: Knowledge Base 생성
+    const createKnowledgeResponse = await fetch('https://api.d-id.com/knowledge', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${DID_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: `퀴즈답변_${studentName}_${Date.now()}`,
+        description: `${studentName}님의 스텝레더 운동 퀴즈 답변`
+      })
+    });
+
+    if (!createKnowledgeResponse.ok) {
+      const errorText = await createKnowledgeResponse.text();
+      throw new Error(`Knowledge 생성 실패: ${errorText}`);
+    }
+
+    const knowledge = await createKnowledgeResponse.json();
+    const knowledgeId = knowledge.id;
+
+    // Step 2: 답변 내용 작성
     const knowledgeContent = `
 지식제목: 퀴즈 답변 기록 - ${studentName}
 답변일시: ${timestamp}
@@ -47,28 +68,34 @@ exports.handler = async (event, context) => {
 주의력, 기억력, 반응속도를 함께 향상시킬 수 있습니다.
     `.trim();
 
-    const createKnowledgeResponse = await fetch('https://api.d-id.com/knowledge', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${DID_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: `퀴즈답변_${studentName}_${Date.now()}`,
-        description: `${studentName}님의 답변`,
-        content: knowledgeContent
-      })
-    });
+    // Step 3: Pastebin 또는 GitHub Gist 사용 (임시 텍스트 호스팅)
+    // 간단하게 data URI 사용
+    const base64Content = Buffer.from(knowledgeContent, 'utf-8').toString('base64');
+    const dataUri = `data:text/plain;base64,${base64Content}`;
 
-    if (!createKnowledgeResponse.ok) {
-      const errorText = await createKnowledgeResponse.text();
-      throw new Error(`Knowledge 생성 실패: ${errorText}`);
+    // Step 4: D-ID에 문서 추가 (data URI 방식)
+    const addDocumentResponse = await fetch(
+      `https://api.d-id.com/knowledge/${knowledgeId}/documents`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${DID_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          documentType: 'text',
+          source_url: dataUri,
+          title: `${studentName}_답변`
+        })
+      }
+    );
+
+    if (!addDocumentResponse.ok) {
+      const errorText = await addDocumentResponse.text();
+      throw new Error(`문서 추가 실패: ${errorText}`);
     }
 
-    const knowledge = await createKnowledgeResponse.json();
-    const knowledgeId = knowledge.id;
-
-    // Step 2: Agent에 Knowledge 연결
+    // Step 5: Agent에 Knowledge 연결
     const updateAgentResponse = await fetch(
       `https://api.d-id.com/agents/${AGENT_ID}`,
       {
