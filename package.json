@@ -1,0 +1,16 @@
+{
+  "name": "elderly-exercise-quiz",
+  "version": "1.0.0",
+  "description": "노인 운동 프로그램 프레젠테이션 with D-ID Knowledge Integration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

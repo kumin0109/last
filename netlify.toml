@@ -1,0 +1,14 @@
+# Netlify 배포 설정
+
+[build]
+  # 빌드가 필요없는 정적 사이트
+  publish = "."
+  
+[functions]
+  # Netlify Functions 디렉토리
+  directory = "netlify/functions"
+
+# 환경변수는 Netlify 대시보드에서 설정:
+# Settings > Environment variables
+# DID_API_KEY = your_api_key_here
+# AGENT_ID = v2_agt_UcvqQ_-y
