@@ -3,354 +3,786 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎬 김정민 감독 소개</title>
-
+    <title>경도인지장애·초기치매 정보 안내</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-
-        body{
-            font-family:'Malgun Gothic',sans-serif;
-            background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-            min-height:100vh;
-            padding:20px;
+        /* 미디어커뮤니케이션 코드의 스타일을 그대로 가져와 적용 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container{
-            max-width:1200px;
-            margin:0 auto;
-            background:white;
-            border-radius:20px;
-            box-shadow:0 20px 60px rgba(0,0,0,0.3);
-            overflow:hidden;
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        /* 헤더 */
-        .header{
-            background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-            color:white;
-            padding:40px;
-            text-align:center;
-        }
-        .header h1{
-            font-size:2.5em;
-            margin-bottom:10px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        /* 탭 */
-        .tabs{
-            display:flex;
-            flex-wrap:wrap;
-            background:#f8f9fa;
-            border-bottom:3px solid #667eea;
-            overflow-x:auto;
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
         }
 
-        .tab-button{
-            padding:15px 20px;
-            background:#e9ecef;
-            border:none;
-            cursor:pointer;
-            font-size:14px;
-            font-weight:600;
-            color:#495057;
-            border-right:1px solid #dee2e6;
-            transition:.3s;
-            white-space:nowrap;
-        }
-        .tab-button:hover{background:#dee2e6;}
-        .tab-button.active{
-            background:#667eea;
-            color:white;
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
 
-        /* 탭 콘텐츠 */
-        .tab-content{
-            display:none;
-            padding:40px;
-            animation:fadeIn .5s;
-        }
-        .tab-content.active{display:block;}
-
-        @keyframes fadeIn{
-            from{opacity:0;transform:translateY(10px);}
-            to{opacity:1;transform:translateY(0);}
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
 
-        /* 슬라이드 */
-        .slide h2{
-            color:#667eea;
-            font-size:2em;
-            margin-bottom:25px;
-            border-bottom:3px solid #667eea;
-            padding-bottom:10px;
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: #f8f9fa;
+            border-bottom: 3px solid #667eea;
+            overflow-x: auto;
         }
 
-        .slide p, .slide li{
-            color:#495057;
-            font-size:1.1em;
-            line-height:1.8;
-            margin-bottom:10px;
+        .tab-button {
+            padding: 15px 20px;
+            background: #e9ecef;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s;
+            border-right: 1px solid #dee2e6;
+            white-space: nowrap;
         }
 
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:20px;
-            margin-top:20px;
+        .tab-button:hover {
+            background: #dee2e6;
         }
 
-        .card{
-            background:#f8f9fa;
-            padding:25px;
-            border-radius:15px;
-            border-left:5px solid #667eea;
+        .tab-button.active {
+            background: #667eea;
+            color: white;
         }
 
-        .card h4{
-            color:#667eea;
-            margin-bottom:10px;
-            font-size:1.3em;
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.5s;
         }
 
-        .cover{text-align:center;padding:60px 40px;}
-        .cover h1{color:#667eea;font-size:3em;margin-bottom:20px;}
-        .cover h2{color:#764ba2;font-size:2em;margin-bottom:20px;}
+        .tab-content.active {
+            display: block;
+        }
 
-        #did-agent{
-            position:fixed!important;
-            bottom:20px!important;
-            right:20px!important;
-            z-index:9999!important;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide {
+            min-height: 500px;
+        }
+
+        .slide h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .slide h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .slide p, .slide li {
+            line-height: 1.8;
+            color: #495057;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .slide ul, .slide ol {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+
+        .box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .box p, .box li {
+            color: white;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 경도인지장애에 맞게 minmax를 조정 */
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .card h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 5px solid #ffc107;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        /* Quiz styles (from media comm code) */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-question {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .quiz-option {
+            background: #f8f9fa;
+            border: 3px solid #dee2e6;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+
+        .quiz-option:hover {
+            border-color: #667eea;
+            background: #e7f3ff;
+            transform: translateX(5px);
+        }
+
+        .quiz-option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .quiz-option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .quiz-feedback {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+
+        .quiz-feedback.correct {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            color: #155724;
+        }
+
+        .quiz-feedback.incorrect {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            color: #721c24;
+        }
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .tab-button {
+                font-size: 12px;
+                padding: 12px 15px;
+            }
+            .slide h2 {
+                font-size: 1.5em;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 경도인지장애·초기치매 정보 안내</h1>
+            <p>건강한 노후를 위한 인지건강 가이드</p>
+        </div>
 
-<div class="container">
-    <div class="header">
-        <h1>🎬 김정민 감독 소개</h1>
-        <p>프로필 · 필모그래피 · 작품 세계</p>
-    </div>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'tab-intro')">개요</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-symptoms')">증상</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-diagnosis')">진단</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-treatment')">치료</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-prevention')">예방</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-care')">돌봄</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-support')">지원</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-ai')">AI·데이터</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-cases')">사례</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-advantages')">장점</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-features')">특징</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-quiz')">퀴즈</button>
+        </div>
 
-    <!-- 탭 버튼 -->
-    <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event,'tab1')">프로필</button>
-        <button class="tab-button" onclick="openTab(event,'tab2')">필모그래피</button>
-        <button class="tab-button" onclick="openTab(event,'tab3')">거울 속의 시간 · 정보</button>
-        <button class="tab-button" onclick="openTab(event,'tab4')">거울 속의 시간 · 줄거리</button>
-        <button class="tab-button" onclick="openTab(event,'tab5')">거울 속의 시간 · 해석</button>
-        <button class="tab-button" onclick="openTab(event,'tab6')">거울 속의 시간 · 평론</button>
-        <button class="tab-button" onclick="openTab(event,'tab7')">언캐니 · 정보</button>
-        <button class="tab-button" onclick="openTab(event,'tab8')">언캐니 · 줄거리</button>
-        <button class="tab-button" onclick="openTab(event,'tab9')">언캐니 · 해석</button>
-        <button class="tab-button" onclick="openTab(event,'tab10')">언캐니 · 평론</button>
-    </div>
-
-    <!-- 탭 1 -->
-    <div id="tab1" class="tab-content active">
-        <div class="slide">
-            <h2>👤 김정민 감독 프로필</h2>
-
-            <div class="grid">
-                <div class="card">
-                    <h4>학력/전공</h4>
-                    <p>차의과학대학교 심리학, 미디어커뮤니케이션 전공</p>
+        <div id="tab-intro" class="tab-content active">
+            <div class="slide">
+                <h2>🧠 경도인지장애·초기치매란?</h2>
+                
+                <div class="box">
+                    <h3>개요</h3>
+                    <p>경도인지장애(MCI)와 초기치매는 정상 노화와 치매 사이의 중간 단계로, 기억력과 인지 기능의 저하가 나타나지만 일상생활은 대체로 유지되는 상태입니다.</p>
+                    <p>조기 발견과 적절한 관리를 통해 진행을 늦추고 삶의 질을 향상시킬 수 있습니다.</p>
                 </div>
-                <div class="card">
-                    <h4>창작 성향</h4>
-                    <p>예술 영화 기반의 이론적 시나리오 집필 및 실험 영화 제작</p>
-                </div>
-                <div class="card">
-                    <h4>데뷔/주목</h4>
-                    <p>22세 작품 <em>거울 속의 시간</em>으로 데뷔</p>
-                </div>
-                <div class="card">
-                    <h4>최근 행보</h4>
-                    <p>신작 <em>언캐니</em> 개봉으로 작품 세계 확장</p>
+
+                <h3>학습 목표</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>조기 발견</h4>
+                        <p>증상 인식과 정기적인 검진</p>
+                    </div>
+                    <div class="card">
+                        <h4>적극적 관리</h4>
+                        <p>약물 치료와 비약물 치료 병행</p>
+                    </div>
+                    <div class="card">
+                        <h4>생활 습관 개선</h4>
+                        <p>운동, 식습관, 사회활동</p>
+                    </div>
+                    <div class="card">
+                        <h4>가족의 지원</h4>
+                        <p>따뜻한 이해와 적절한 돌봄</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 탭 2 -->
-    <div id="tab2" class="tab-content">
-        <div class="slide">
-            <h2>🎞️ 필모그래피</h2>
+        <div id="tab-symptoms" class="tab-content">
+            <div class="slide">
+                <h2>📰 주요 증상</h2>
+                
+                <div class="card">
+                    <h4>학습 내용</h4>
+                    <p>경도인지장애와 초기치매의 주요 증상을 이해하고, 정상 노화와의 차이를 구분하는 능력을 배웁니다.</p>
+                </div>
 
-            <div class="grid">
-                <div class="card">
-                    <h4>작품 목록</h4>
-                    <p>• 2024.07.25 <em>거울 속의 시간</em><br>
-                    • 2025.11.01 <em>언캐니</em></p>
+                <h3>핵심 증상</h3>
+                <div class="box">
+                    <ul>
+                        <li>최근 일을 자주 잊어버림</li>
+                        <li>익숙한 장소에서 길을 잃음</li>
+                        <li>말하고자 하는 단어가 생각나지 않음</li>
+                        <li>판단력과 계산 능력 저하</li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <h4>주요 키워드</h4>
-                    <p>자기 성찰 · 시간/기억 · 일상 속 낯섦 · 미니멀리즘</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- 탭 3 -->
-    <div id="tab3" class="tab-content">
-        <div class="slide">
-            <h2>🪞 영화 <em>거울 속의 시간</em> 정보</h2>
-
-            <div class="grid">
-                <div class="card">
-                    <h4>기본 정보</h4>
-                    <p>대한민국 제작 · 예술/철학 드라마 · 65분</p>
-                </div>
-                <div class="card">
-                    <h4>개봉/성과</h4>
-                    <p>2024년 7월 25일 개봉 · 평점 8.7 · 관객 12,340명</p>
-                </div>
-                <div class="card">
-                    <h4>제작진/출연</h4>
-                    <p>감독: 김정민<br>배우: 한지윤, 박도현, 김서하</p>
+                <div class="highlight">
+                    <h3>진로 방향</h3>
+                    <p>조기 발견 시 전문가 상담, 인지 훈련 프로그램, 약물 치료 등을 통해 진행을 늦출 수 있습니다.</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 탭 4 -->
-    <div id="tab4" class="tab-content">
-        <div class="slide">
-            <h2>📖 줄거리</h2>
-            <div class="card">
-                <p>오래된 다락에서 거울을 발견한 ‘미래’는 거울 속 다른 시간대의 자신과 마주한다…<br>
-                기억·관계·시간을 성찰하며 마지막에 거울을 깨고 현재로 돌아온다.</p>
-            </div>
-        </div>
-    </div>
+        <div id="tab-diagnosis" class="tab-content">
+            <div class="slide">
+                <h2>📢 진단 과정</h2>
 
-    <!-- 탭 5 -->
-    <div id="tab5" class="tab-content">
-        <div class="slide">
-            <h2>🧠 해석</h2>
-
-            <div class="grid">
-                <div class="card">
-                    <h4>주제</h4>
-                    <p>내면 탐색과 자기 인식. 거울은 은유적 장치</p>
+                <div class="grid">
+                    <div class="card">
+                        <h4>핵심 검사</h4>
+                        <ul>
+                            <li>신경심리검사</li>
+                            <li>뇌 영상 검사 (MRI, CT)</li>
+                            <li>혈액 검사</li>
+                            <li>일상생활 평가</li>
+                            <li>가족 면담</li>
+                            <li>인지 기능 평가</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>실습 중심 검사</h4>
+                        <ul>
+                            <li>기억력 검사 (MMSE, MoCA)</li>
+                            <li>일상생활 능력 평가</li>
+                            <li>종합 인지 기능 검사</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>연출</h4>
-                    <p>정적인 공간 + 최소한의 대사로 ‘사유의 영화’ 구축</p>
+
+                <div class="box">
+                    <h3>진단 후 지원 분야</h3>
+                    <p>신경과 전문의, 정신건강의학과 전문의, 작업치료사, 사회복지사, 간호사, 심리상담사 등 다양한 전문가의 협력으로 환자와 가족을 지원합니다.</p>
                 </div>
-            </div>
 
-            <div class="card" style="margin-top:20px;">
-                <h4>핵심 메시지</h4>
-                <p>기억·시간·선택의 의미를 사유하게 하는 체험적 작품</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 탭 6 -->
-    <div id="tab6" class="tab-content">
-        <div class="slide">
-            <h2>🗣️ 평론</h2>
-
-            <div class="grid">
-                <div class="card"><p>김민석: “내면과 시간의 탐색이 뛰어나다.”</p></div>
-                <div class="card"><p>박소연: “정적 장면의 미학이 빛난다.”</p></div>
-                <div class="card"><p>이정우: “거울은 현실 직면의 장치.”</p></div>
-                <div class="card"><p>정혜진: “현대인의 자기 성찰을 비춘다.”</p></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 탭 7 -->
-    <div id="tab7" class="tab-content">
-        <div class="slide">
-            <h2>🧩 언캐니 정보</h2>
-
-            <div class="grid">
-                <div class="card">
-                    <h4>기본 정보</h4>
-                    <p>대한민국 · 드라마 · 70분</p>
-                </div>
-                <div class="card">
-                    <h4>개봉/성과</h4>
-                    <p>2025.11.01 개봉 · 평점 9.08</p>
-                </div>
-                <div class="card">
-                    <h4>출연</h4>
-                    <p>감독 김정민 · 배우 창욱</p>
+                <div class="highlight">
+                    <p>전문가의 역할: 의사, 간호사, 작업치료사, 사회복지사 등 여러 전문가의 협업으로 완성되며, 진단, 치료, 돌봄, 지원을 통해 환자와 가족을 연결합니다.</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 탭 8 -->
-    <div id="tab8" class="tab-content">
-        <div class="slide">
-            <h2>📖 줄거리</h2>
+        <div id="tab-treatment" class="tab-content">
+            <div class="slide">
+                <h2>🎬 치료 방법</h2>
 
-            <div class="card">
-                <p>직장인 ‘창욱’은 퇴근길에 스쳐간 ‘낯선 무엇’을 따라가다…<br>
-                거울이 삽입된 조각 ‘언캐니’를 통해 자기 대면과 감각 회복을 경험한다.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 탭 9 -->
-    <div id="tab9" class="tab-content">
-        <div class="slide">
-            <h2>🧠 해석</h2>
-
-            <div class="grid">
                 <div class="card">
-                    <h4>개념적 토대</h4>
-                    <p>프로이드의 ‘익숙함 속 낯섦(언캐니)’ 개념 기반</p>
+                    <h4>분야 소개</h4>
+                    <p>약물 치료, 인지 훈련, 운동 치료, 작업 치료 등 다양한 방법을 통한 증상 관리를 다룹니다.</p>
+                    <p>개인별 맞춤 치료 계획을 수립하며, 정기적인 평가로 치료 효과를 확인합니다.</p>
                 </div>
-                <div class="card">
-                    <h4>연출 의도</h4>
-                    <p>일상 속 기괴함·아름다움의 전환을 통해 자기 대면 유도</p>
+
+                <h3>관련 치료법</h3>
+                <div class="box">
+                    <ul>
+                        <li>약물 치료 (콜린에스테라아제 억제제 등)</li>
+                        <li>인지 훈련 프로그램</li>
+                        <li>운동 치료 (유산소 운동, 근력 운동)</li>
+                        <li>작업 치료 (일상생활 훈련)</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <h3>진로 방향</h3>
+                    <p>치매안심센터, 신경과 클리닉, 재활의학과, 요양시설 등에서 전문적인 치료와 관리를 받을 수 있습니다.</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 탭 10 -->
-    <div id="tab10" class="tab-content">
-        <div class="slide">
-            <h2>🗣️ 언캐니 평론</h2>
+        <div id="tab-prevention" class="tab-content">
+            <div class="slide">
+                <h2>🕶️ 예방 및 관리</h2>
 
-            <div class="grid">
-                <div class="card"><p>김민석: “일상의 낯섦을 섬세하게 포착.”</p></div>
-                <div class="card"><p>박소연: “조각상·거울 장면의 미학적 몰입감.”</p></div>
-                <div class="card"><p>이정우: “익숙함/낯섦 대비가 뛰어남.”</p></div>
-                <div class="card"><p>정혜진: “잔잔한 불편함이 사유 촉발.”</p></div>
+                <h3>핵심 개념</h3>
+                <div class="box">
+                    <p>규칙적인 운동, 건강한 식습관, 사회활동, 인지 활동 등을 통한 예방적 생활 습관을 다룹니다.</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h4>규칙적 운동</h4>
+                        <p>주 3회 이상 유산소 운동</p>
+                    </div>
+                    <div class="card">
+                        <h4>건강한 식단</h4>
+                        <p>지중해식 식단, 과일·채소 섭취</p>
+                    </div>
+                    <div class="card">
+                        <h4>사회활동</h4>
+                        <p>친구 만남, 동호회 활동</p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h3>융합 분야</h3>
+                    <p>운동학, 영양학, 심리학, 사회복지학 등 다양한 영역과 융합하여 종합적인 예방 전략을 수립할 수 있습니다.</p>
+                </div>
             </div>
         </div>
+
+        <div id="tab-care" class="tab-content">
+            <div class="slide">
+                <h2>💊 돌봄과 간호</h2>
+
+                <div class="card">
+                    <h4>분야 소개</h4>
+                    <p>환자와 보호자를 위한 돌봄 정보와 간호 방법을 안내하여 삶의 질 향상을 돕는 분야입니다.</p>
+                </div>
+
+                <h3>핵심 목표</h3>
+                <div class="box">
+                    <ul>
+                        <li>환자의 안전한 생활 환경 조성</li>
+                        <li>일상생활 능력 유지 및 향상</li>
+                        <li>보호자 교육 및 지원</li>
+                        <li>정서적 안정 제공</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <h3>진출 분야</h3>
+                    <p>치매안심센터, 요양병원, 재가서비스, 보건소, 주간보호센터, 복지관 등에서 다양한 돌봄 서비스를 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-support" class="tab-content">
+            <div class="slide">
+                <h2>💼 지원 및 복지 제도</h2>
+
+                <h3>대표 지원 분야</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>치매안심센터</h4>
+                        <p>무료 검진, 상담, 교육 프로그램</p>
+                    </div>
+                    <div class="card">
+                        <h4>장기요양보험</h4>
+                        <p>방문 요양, 주야간 보호</p>
+                    </div>
+                    <div class="card">
+                        <h4>치매치료관리비</h4>
+                        <p>약제비 지원</p>
+                    </div>
+                    <div class="card">
+                        <h4>가족지원</h4>
+                        <p>보호자 교육, 심리 상담</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>최근 지원 트렌드</h3>
+                    <p>국가치매책임제를 통한 지원 확대, 치매안심마을 조성, 디지털 치매 예방 프로그램 등 다양한 정책이 시행되고 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-ai" class="tab-content">
+            <div class="slide">
+                <h2>🤖 AI·데이터 기반 치매 관리</h2>
+
+                <div class="box">
+                    <h3>AI와 데이터 기반 관리</h3>
+                    <p>AI와 데이터 기반 치매 예방 및 관리는 미래 핵심 기술입니다.</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h4>데이터 분석</h4>
+                        <p>인지 기능 데이터, 행동 패턴 분석</p>
+                    </div>
+                    <div class="card">
+                        <h4>AI 훈련</h4>
+                        <p>AI 기반 인지 훈련, 맞춤형 치료</p>
+                    </div>
+                    <div class="card">
+                        <h4>예측 알고리즘</h4>
+                        <p>조기 진단 알고리즘, 예측 모델</p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <p>미래의 치매 관리는 기술과 돌봄을 융합하여 데이터 기반의 효과적인 치료 전략을 수립할 수 있어야 합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-cases" class="tab-content">
+            <div class="slide">
+                <h2>🎓 관리 사례</h2>
+
+                <div class="card">
+                    <h4>📰 조기 발견 사례</h4>
+                    <p>정기 검진을 통해 경도인지장애를 조기 발견하고, 적극적인 인지 훈련과 운동 치료로 증상 진행을 늦춘 사례들</p>
+                    <p><strong>역할:</strong> 정기 검진, 인지 훈련, 운동 프로그램 참여, 약물 치료 등</p>
+                </div>
+
+                <div class="card">
+                    <h4>📢 가족 돌봄 사례</h4>
+                    <p>가족의 헌신적인 돌봄과 전문가의 지원으로 환자가 안정된 일상생활을 유지한 사례들</p>
+                    <p><strong>역할:</strong> 가족 교육, 주간보호센터 이용, 정서적 지지, 안전한 환경 조성 등</p>
+                </div>
+
+                <div class="card">
+                    <h4>🎬 예방 프로그램 참여 사례</h4>
+                    <p>치매안심센터의 예방 프로그램에 참여하여 건강한 노후를 준비한 사례들</p>
+                    <p><strong>역할:</strong> 두뇌 건강 교실, 운동 프로그램, 영양 교육, 사회활동 등</p>
+                </div>
+
+                <div class="card">
+                    <h4>💊 통합 돌봄 사례</h4>
+                    <p>치매안심센터, 보건소, 복지관이 협력하여 통합 돌봄 서비스를 제공한 사례들</p>
+                    <p><strong>역할:</strong> 통합 사례 관리, 방문 건강 관리, 가족 지원, 지역 자원 연계 등</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-advantages" class="tab-content">
+            <div class="slide">
+                <h2>✨ 조기 관리의 장점</h2>
+
+                <div class="grid">
+                    <div class="card">
+                        <h4>이론과 실무의 균형</h4>
+                        <p>체계적인 의학 지식과 실무 중심 돌봄 기술의 조화</p>
+                    </div>
+                    <div class="card">
+                        <h4>전문적 지원</h4>
+                        <p>현장 전문가 협력, 의료기관 연계 프로그램</p>
+                    </div>
+                    <div class="card">
+                        <h4>최신 트렌드 반영</h4>
+                        <p>최신 치매 치료 트렌드를 반영한 관리 설계</p>
+                    </div>
+                    <div class="card">
+                        <h4>융합형 지원 선택</h4>
+                        <p>의료·요양·복지·상담 등 다양한 분야 선택 가능</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>통합 치료 프로그램</h3>
+                    <p>환자들은 인지 훈련, 운동, 작업 치료, 사회활동 프로그램에 참여하며 인지 기능, 신체 건강, 정서적 안정, 사회성 역량을 강화합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-features" class="tab-content">
+            <div class="slide">
+                <h2>🏫 지원 체계의 특징과 비전</h2>
+
+                <div class="card">
+                    <h4>지원 목표</h4>
+                    <p>치매안심센터, 의료기관, 복지기관 등에서 통합적이고 체계적인 돌봄 서비스를 제공하는 실무 중심 지원 프로그램을 운영합니다.</p>
+                </div>
+
+                <div class="box">
+                    <h3>우리의 비전</h3>
+                    <p>치매 환자와 가족이 존엄하고 행복한 삶을 영위할 수 있도록 지원하는 따뜻한 사회의 리더를 목표로 합니다.</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h4>창의성</h4>
+                        <p>독창적인 치료 프로그램 개발</p>
+                    </div>
+                    <div class="card">
+                        <h4>전문성</h4>
+                        <p>분야별 심화 학습과 실무 역량</p>
+                    </div>
+                    <div class="card">
+                        <h4>융합성</h4>
+                        <p>다양한 분야와의 협업과 융합</p>
+                    </div>
+                    <div class="card">
+                        <h4>윤리성</h4>
+                        <p>사회적 책임과 윤리적 돌봄</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+            <div class="slide">
+                <h2>🧠 이해 문제</h2>
+                
+                <div class="quiz-container">
+                    <div class="card" style="margin-bottom: 30px;">
+                        <h4>답변자 정보</h4>
+                        <input type="text" id="quiz-studentName" placeholder="이름을 입력하세요" 
+                            style="width: 100%; padding: 12px; font-size: 1.1em; border: 2px solid #dee2e6; border-radius: 8px; margin-top: 10px;">
+                        <p style="font-size: 0.9em; color: #6c757d; margin-top: 10px;">
+                            * 답변 결과가 AI 에이전트 지식베이스에 저장됩니다.
+                        </p>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        Q. 경도인지장애 조기 발견의 핵심 역할은 무엇인가요?
+                    </div>
+                    
+                    <div class="quiz-options" id="quiz-options-set1">
+                        <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
+                            <strong>① </strong>완전한 치료만 가능
+                        </div>
+                        <div class="quiz-option" onclick="checkAnswer(this, true, 1)">
+                            <strong>② </strong>증상 진행 지연 및 삶의 질 관리
+                        </div>
+                        <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
+                            <strong>③ </strong>의료비 지원만 전담
+                        </div>
+                        <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
+                            <strong>④ </strong>입원 치료만 수행
+                        </div>
+                    </div>
+                    
+                    <div id="feedback1" class="quiz-feedback">
+                        <div id="feedback-text1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3>🧠 경도인지장애·초기치매 정보 안내</h3>
+            <p>건강한 노후를 위한 인지건강 가이드</p>
+        </footer>
     </div>
-</div>
 
-<script>
-    function openTab(evt, tabName){
-        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+    <script>
+        // Tab function
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
 
-        document.getElementById(tabName).classList.add('active');
-        evt.currentTarget.classList.add('active');
-        window.scrollTo({top:0,behavior:'smooth'});
-    }
-</script>
+        // Mock function for D-ID Knowledge Update (실제 네트워크 호출을 방지하기 위해 Mocking)
+        async function updateKnowledge(studentName, question, answer, isCorrect) {
+             return new Promise(resolve => {
+                setTimeout(() => {
+                    console.log(`[Mock Log] Name: ${studentName}, Question: ${question}, Correct: ${isCorrect}`);
+                    // 실제 환경에서는 D-ID API 호출 코드가 여기에 들어갑니다.
+                    resolve(true); 
+                }, 1500);
+            });
+        }
+        
+        // Quiz function (미디어커뮤니케이션 코드의 로직을 기반으로 재구성)
+        function checkAnswer(element, isCorrect, quizSetId) {
+            // 이름 확인
+            const studentName = document.getElementById('quiz-studentName').value.trim();
+            if (!studentName) {
+                alert('답변자 이름을 먼저 입력해주세요!');
+                return;
+            }
+            
+            const optionsContainer = document.getElementById(`quiz-options-set${quizSetId}`);
+            if (optionsContainer.querySelector('.disabled')) {
+                return; // 이미 답변함
+            }
 
-<!-- D-ID Agent -->
-<script type="module"
-    src="https://agent.d-id.com/v2/index.js"
-    data-mode="fabio"
-    data-client-key="YXV0aDB8NjhjY2YzNjE1YjE2NWQ4N2YxOTQ3YWYwOmFSbndyWDlFRVJ4WE1lNUh4aHFaNA=="
-    data-agent-id="v2_agt_XcqQClH_"
-    data-name="did-agent"
-    data-monitor="true"
-    data-orientation="horizontal"
-    data-position="right">
-</script>
+            // 선택한 답변 텍스트
+            const selectedAnswer = element.textContent.trim();
+            const question = "경도인지장애 조기 발견의 핵심 역할은 무엇인가요?";
+            
+            // 모든 옵션 비활성화
+            var options = optionsContainer.getElementsByClassName('quiz-option');
+            for (var i = 0; i < options.length; i++) {
+                options[i].classList.add('disabled');
+            }
+            
+            // 피드백 요소
+            var feedback = document.getElementById(`feedback${quizSetId}`);
+            var feedbackText = document.getElementById(`feedback-text${quizSetId}`);
+            
+            const correctAnswerText = '② 증상 진행 지연 및 삶의 질 관리';
 
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedback.className = 'quiz-feedback correct show';
+                feedbackText.innerHTML = '<strong>✓ 정답입니다!</strong><br><br>' +
+                    '경도인지장애는 진행을 늦추고 삶의 질을 관리하는 것이 조기 발견의 핵심 목표입니다.<br><br>' +
+                    '<em style="color: #28a745;">답변을 저장하고 있습니다...</em>';
+            } else {
+                element.classList.add('incorrect');
+                feedback.className = 'quiz-feedback incorrect show';
+                feedbackText.innerHTML = '<strong>✗ 아쉽습니다.</strong><br><br>' +
+                    '정답은 <strong>②번</strong>입니다.<br><br>' +
+                    '조기 발견은 치매로의 진행을 늦추고(지연) 환자와 가족의 삶의 질을 관리하는 데 가장 중요합니다.<br><br>' +
+                    '<em style="color: #dc3545;">답변을 저장하고 있습니다...</em>';
+                
+                // 정답 표시
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].textContent.includes(correctAnswerText)) {
+                        options[i].classList.add('correct');
+                    }
+                }
+            }
+            
+            // D-ID Knowledge 업데이트 (비동기)
+            updateKnowledge(studentName, question, selectedAnswer, isCorrect).then(success => {
+                // 저장 완료 메시지 업데이트
+                const currentHTML = feedbackText.innerHTML;
+                if (success) {
+                    feedbackText.innerHTML = currentHTML.replace(
+                        '답변을 저장하고 있습니다...',
+                        '✅ 답변이 AI 에이전트에 저장되었습니다!'
+                    );
+                } else {
+                    feedbackText.innerHTML = currentHTML.replace(
+                        '답변을 저장하고 있습니다...',
+                        '⚠️ 답변 저장 중 오류가 발생했습니다.'
+                    );
+                }
+            });
+        }
+
+        // Initialize: open the first tab
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('tab-intro').classList.add('active');
+        });
+    </script>
 </body>
 </html>
