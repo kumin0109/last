@@ -4,10 +4,9 @@ exports.handler = async (event) => {
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Methods": "POST, OPTIONS"
   };
 
-  // OPTIONS 프리플라이트 처리
   if (event.httpMethod === "OPTIONS") {
     return { statusCode: 200, headers, body: "" };
   }
@@ -29,6 +28,7 @@ exports.handler = async (event) => {
 
     const DID_API_KEY = process.env.DID_API_KEY;
     const AGENT_ID = process.env.AGENT_ID;
+    const KNOWLEDGE_ID = process.env.KNOWLEDGE_ID;
 
     const timestamp = new Date().toISOString();
 
@@ -43,9 +43,9 @@ exports.handler = async (event) => {
     const fileName = `quiz_${studentName}_${Date.now()}.txt`;
     const contentBase64 = Buffer.from(content).toString("base64");
 
-    // ============================
-    // 1) GitHub 저장
-    // ============================
+    // ==========================
+    // 1) GitHub 업로드
+    // ==========================
     await fetch(
       `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${fileName}`,
       {
@@ -63,26 +63,39 @@ exports.handler = async (event) => {
 
     const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${fileName}`;
 
-    // ============================
-    // 2) D-ID 지식 업데이트
-    // ============================
-    const didRes = await fetch(
-      `https://api.d-id.com/agents/${AGENT_ID}/documents`,
+    // ==========================
+    // 2) D-ID Knowledge에 문서 추가
+    // ==========================
+    const didHeaders = {
+      "Authorization": `Basic ${DID_API_KEY}`,
+      "Content-Type": "application/json",
+    };
+
+    const documentRes = await fetch(
+      `https://api.d-id.com/knowledge/${KNOWLEDGE_ID}/documents`,
       {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${DID_API_KEY}`, // ★ 수정: Basic → Bearer
-          "Content-Type": "application/json",
-        },
+        headers: didHeaders,
         body: JSON.stringify({
-          source_url: rawUrl,
           documentType: "text",
-          title: `${studentName} 퀴즈 제출`,
+          source_url: rawUrl,
+          title: `${studentName}의 퀴즈 답변`,
         }),
       }
     );
 
-    const didJson = await didRes.json();
+    const docJson = await documentRes.json();
+
+    // ==========================
+    // 3) Agent에 Knowledge 연결
+    // ==========================
+    await fetch(`https://api.d-id.com/agents/${AGENT_ID}`, {
+      method: "PATCH",
+      headers: didHeaders,
+      body: JSON.stringify({
+        knowledge: { id: KNOWLEDGE_ID },
+      }),
+    });
 
     return {
       statusCode: 200,
@@ -90,14 +103,18 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         success: true,
         github_url: rawUrl,
-        did_result: didJson,
+        did_document: docJson,
       }),
     };
+
   } catch (err) {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ success: false, error: err.message }),
+      body: JSON.stringify({
+        success: false,
+        error: err.message
+      }),
     };
   }
 };
