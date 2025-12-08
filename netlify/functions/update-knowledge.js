@@ -22,29 +22,41 @@ exports.handler = async (event, context) => {
   const DID_API_KEY = process.env.DID_API_KEY;
   const KNOWLEDGE_ID = process.env.KNOWLEDGE_ID;
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const GITHUB_USERNAME = "sdkparkforbi";
+  const GITHUB_USERNAME = "jsggm03";
   const REPO_NAME = "ai-agent-knowledge";
 
   const { studentName, question, answer, isCorrect } = JSON.parse(event.body);
   const timestamp = new Date().toLocaleString('ko-KR');
-  
+
+  // 🔥 여기 부분만 퀴즈 내용에 맞게 수정됨
+  const explanation = `
+경도인지장애(MCI)의 조기 발견은 완치가 목적이 아니라,
+✔ 증상 진행을 늦추고  
+✔ 삶의 질을 유지하며 관리할 수 있도록 돕는 것이 핵심입니다.
+  `.trim();
+
   const knowledgeContent = `
 지식제목: 퀴즈 답변 기록 - ${studentName}
 답변일시: ${timestamp}
 답변자: ${studentName}
-문제: ${question}
-선택한 답: ${answer}
-정답 여부: ${isCorrect ? '정답' : '오답'}
+
+문제:
+${question}
+
+선택한 답:
+${answer}
+
+정답 여부:
+${isCorrect ? '정답' : '오답'}
+
 해설:
-이중과제 운동은 일상생활에서 걷기와 대화하기, 걷기와 물건 들기 등 
-여러 과제를 동시에 처리해야 하는 상황에 대비하는 훈련입니다. 
-스텝레더 운동에 청각 자극(호각 소리)을 추가하여 
-주의력, 기억력, 반응속도를 함께 향상시킬 수 있습니다.
+${explanation}
   `.trim();
 
   const fileName = `quiz_${studentName}_${Date.now()}.txt`;
   const fileContentBase64 = Buffer.from(knowledgeContent, 'utf-8').toString('base64');
 
+  // 🔹 GitHub 저장
   const githubResponse = await fetch(
     `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${fileName}`,
     {
@@ -63,6 +75,7 @@ exports.handler = async (event, context) => {
 
   const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${fileName}`;
 
+  // 🔹 D-ID 지식베이스에 문서 추가
   const documentData = {
     documentType: 'text',
     source_url: rawUrl,
