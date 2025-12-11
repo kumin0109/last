@@ -1,7 +1,7 @@
 {
   "name": "Know",
   "version": "1.0.0",
-  "description": "경도인지장애·초기치매 정보 안내 with D-ID Knowledge Integration",
+  "description": "미디어커뮤니케이션전공 소개 with D-ID Knowledge Integration",
   "main": "index.html",
   "scripts": {
     "dev": "netlify dev"
