@@ -23,7 +23,7 @@ exports.handler = async (event) => {
     const { studentName, question, answer, isCorrect } = JSON.parse(event.body);
 
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_USERNAME = "jsggm03";
+    const GITHUB_USERNAME = "kumin0109";
     const REPO_NAME = "ai-agent-knowledge";
 
     const DID_API_KEY = process.env.DID_API_KEY;
