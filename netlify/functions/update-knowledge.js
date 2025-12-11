@@ -38,14 +38,12 @@ exports.handler = async (event) => {
 답변: ${answer}
 정답 여부: ${isCorrect}
 시간: ${timestamp}
-    `.trim();
+`.trim();
 
     const fileName = `quiz_${studentName}_${Date.now()}.txt`;
     const contentBase64 = Buffer.from(content).toString("base64");
 
-    // ==========================
     // 1) GitHub 업로드
-    // ==========================
     await fetch(
       `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${fileName}`,
       {
@@ -63,11 +61,9 @@ exports.handler = async (event) => {
 
     const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${fileName}`;
 
-    // ==========================
-    // 2) D-ID Knowledge에 문서 추가
-    // ==========================
+    // 2) D-ID Knowledge 문서 등록
     const didHeaders = {
-      "Authorization": `Basic ${DID_API_KEY}`,
+      "x-client-key": DID_API_KEY,
       "Content-Type": "application/json",
     };
 
@@ -86,9 +82,7 @@ exports.handler = async (event) => {
 
     const docJson = await documentRes.json();
 
-    // ==========================
-    // 3) Agent에 Knowledge 연결
-    // ==========================
+    // 3) Agent에 Knowledge 연결 (필수)
     await fetch(`https://api.d-id.com/agents/${AGENT_ID}`, {
       method: "PATCH",
       headers: didHeaders,
@@ -113,7 +107,7 @@ exports.handler = async (event) => {
       headers,
       body: JSON.stringify({
         success: false,
-        error: err.message
+        error: err.message,
       }),
     };
   }
