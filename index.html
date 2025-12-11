@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>경도인지장애·초기치매 정보 안내</title>
+    <title>미디어커뮤니케이션전공 소개</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -12,13 +12,12 @@
             min-height: 100vh;
             padding: 20px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
         }
 
@@ -63,38 +62,50 @@
 
         .slide { min-height: 500px; }
         .slide h2 {
-            color: #667eea; font-size: 2em; margin-bottom: 30px;
-            border-bottom: 3px solid #667eea; padding-bottom: 10px;
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
-        .slide h3 { color: #764ba2; font-size: 1.5em; margin: 25px 0 15px; }
+        .slide h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px;
+        }
         .slide p, .slide li {
-            line-height: 1.8; color: #495057; font-size: 1.1em; margin-bottom: 10px;
+            line-height: 1.8;
+            color: #495057;
+            font-size: 1.1em;
+            margin-bottom: 10px;
         }
-        .slide ul, .slide ol {
-            list-style-position: inside;
-            margin-left: 20px;
-        }
+        .slide ul { list-style-position: inside; margin-left: 20px; }
 
         .box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 30px; border-radius: 15px; margin: 20px 0;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
         }
-        .box h3 { color: white; margin-bottom: 15px; }
-        .box p, .box li { color: white; }
+        .box h3 { margin-bottom: 15px; }
 
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
         .card {
             background: #f8f9fa;
             padding: 25px;
             border-radius: 15px;
             border-left: 5px solid #667eea;
-            margin-bottom: 20px;
         }
-        .card h4 { color: #667eea; font-size: 1.3em; margin-bottom: 15px; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px; margin: 20px 0;
+        .card h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
         }
 
         .highlight {
@@ -104,435 +115,414 @@
             border-radius: 5px;
             margin: 20px 0;
         }
-
-        /* Quiz */
-        .quiz-container { max-width: 800px; margin: 0 auto; }
-        .quiz-question {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 30px;
-            border-radius: 15px; margin-bottom: 30px;
-            font-size: 1.3em; font-weight: 600;
-        }
-        .quiz-options { display: grid; gap: 15px; }
-        .quiz-option {
-            background: #f8f9fa; border: 3px solid #dee2e6;
-            padding: 20px; border-radius: 10px;
-            cursor: pointer; transition: 0.3s;
-            font-size: 1.1em;
-        }
-        .quiz-option:hover {
-            border-color: #667eea; background: #e7f3ff; transform: translateX(5px);
-        }
-        .quiz-option.correct {
-            background: #d4edda; border-color: #28a745; color: #155724;
-        }
-        .quiz-option.incorrect {
-            background: #f8d7da; border-color: #dc3545; color: #721c24;
-        }
-        .quiz-option.disabled { opacity: 0.6; cursor: not-allowed; }
-
-        .quiz-feedback {
-            margin-top: 20px; padding: 20px;
-            border-radius: 10px; font-size: 1.1em; display: none;
-        }
-        .quiz-feedback.show { display: block; }
-        .quiz-feedback.correct {
-            background: #d4edda; border-left: 5px solid #28a745; color: #155724;
-        }
-        .quiz-feedback.incorrect {
-            background: #f8d7da; border-left: 5px solid #dc3545; color: #721c24;
-        }
-
-        footer {
-            background: #2c3e50; color: white;
-            padding: 30px; text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 { font-size: 1.8em; }
-            .tab-button { font-size: 12px; padding: 12px 15px; }
-            .slide h2 { font-size: 1.5em; }
-        }
     </style>
 </head>
 
 <body>
 <div class="container">
     <div class="header">
-        <h1>🧠 경도인지장애·초기치매 정보 안내</h1>
-        <p>건강한 노후를 위한 인지건강 가이드</p>
+        <h1>🎓 미디어커뮤니케이션전공</h1>
+        <p>미래융합대학 헬스케어융합학부 | 차의과학대학교</p>
     </div>
 
     <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'tab-intro')">개요</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-symptoms')">증상</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-diagnosis')">진단</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-treatment')">치료</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-prevention')">예방</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-care')">돌봄</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-support')">지원</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-ai')">AI·데이터</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-cases')">사례</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-advantages')">장점</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-features')">특징</button>
-        <button class="tab-button" onclick="openTab(event, 'tab-quiz')">퀴즈</button>
+        <button class="tab-button active" onclick="openTab(event,'tab1')">전공소개</button>
+        <button class="tab-button" onclick="openTab(event,'tab2')">언론정보</button>
+        <button class="tab-button" onclick="openTab(event,'tab3')">광고·PR</button>
+        <button class="tab-button" onclick="openTab(event,'tab4')">영상콘텐츠</button>
+        <button class="tab-button" onclick="openTab(event,'tab5')">실감미디어(XR)</button>
     </div>
 
-    <!-- INTRO -->
-    <div id="tab-intro" class="tab-content active">
+    <!-- TAB 1 -->
+    <div id="tab1" class="tab-content active">
         <div class="slide">
-            <h2>🧠 경도인지장애·초기치매란?</h2>
+            <h2>🎓 미디어커뮤니케이션 전공이란?</h2>
 
             <div class="box">
-                <h3>개요</h3>
-                <p>경도인지장애(MCI)와 초기치매는 정상 노화와 치매 사이의 중간 단계로, 기억력과 인지 기능의 저하가 나타나지만 일상생활은 대체로 유지되는 상태입니다.</p>
-                <p>조기 발견과 적절한 관리를 통해 진행을 늦추고 삶의 질을 향상시킬 수 있습니다.</p>
+                <h3>전공 개요</h3>
+                <p>미디어커뮤니케이션 전공은 언론정보, 광고·PR, 영상콘텐츠, XR 실감미디어, 헬스커뮤니케이션 등 현대 미디어의 핵심 영역을 폭넓게 다룹니다.</p>
+                <p>학생들은 이론과 실무를 아우르며 변화하는 미디어 환경 속 창의적 전문 인재로 성장합니다.</p>
             </div>
 
             <h3>학습 목표</h3>
             <div class="grid">
                 <div class="card">
-                    <h4>조기 발견</h4>
-                    <p>증상 인식과 정기적인 검진</p>
+                    <h4>창의적 콘텐츠 기획력</h4>
+                    <p>다양한 플랫폼을 위한 콘텐츠 기획 및 제작 능력 강화</p>
                 </div>
                 <div class="card">
-                    <h4>적극적 관리</h4>
-                    <p>약물 치료와 비약물 치료 병행</p>
+                    <h4>디지털 미디어 제작능력</h4>
+                    <p>영상·광고·뉴미디어 콘텐츠 제작 실무 역량</p>
                 </div>
                 <div class="card">
-                    <h4>생활 습관 개선</h4>
-                    <p>운동, 식습관, 사회활동</p>
+                    <h4>데이터 기반 분석력</h4>
+                    <p>미디어 데이터 분석 및 전략 수립</p>
                 </div>
                 <div class="card">
-                    <h4>가족의 지원</h4>
-                    <p>따뜻한 이해와 적절한 돌봄</p>
+                    <h4>사회적 책임</h4>
+                    <p>윤리적 소통과 사회적 가치 구현 능력</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SYMPTOMS -->
-    <div id="tab-symptoms" class="tab-content">
+    <!-- TAB 2 -->
+    <div id="tab2" class="tab-content">
         <div class="slide">
-            <h2>📰 주요 증상</h2>
+            <h2>📰 언론정보 분야</h2>
 
             <div class="card">
                 <h4>학습 내용</h4>
-                <p>경도인지장애와 초기치매의 주요 증상을 이해하고, 정상 노화와의 차이를 구분하는 능력을 배웁니다.</p>
+                <p>디지털 저널리즘, 미디어 비평, 뉴스 제작, 스토리텔링 글쓰기 등을 통해 정보 전달 능력과 사회적 의제 형성 역량을 기릅니다.</p>
             </div>
 
-            <h3>핵심 증상</h3>
             <div class="box">
+                <h3>핵심 교과목</h3>
                 <ul>
-                    <li>최근 일을 자주 잊어버림</li>
-                    <li>익숙한 장소에서 길을 잃음</li>
-                    <li>말하고자 하는 단어가 생각나지 않음</li>
-                    <li>판단력과 계산 능력 저하</li>
+                    <li>디지털미디어와 저널리즘</li>
+                    <li>미디어비평</li>
+                    <li>언론·PR 글쓰기</li>
+                    <li>미디어 조사방법론</li>
                 </ul>
             </div>
 
             <div class="highlight">
                 <h3>진로 방향</h3>
-                <p>조기 발견 시 전문가 상담, 인지 훈련 프로그램, 약물 치료 등을 통해 진행을 늦출 수 있습니다.</p>
+                <p>기자, 뉴스에디터, 방송 구성작가, 데이터저널리스트, 크리에이터 등 다양한 분야로 진출 가능</p>
             </div>
         </div>
     </div>
 
-    <!-- DIAGNOSIS -->
-    <div id="tab-diagnosis" class="tab-content">
+    <!-- TAB 3 -->
+    <div id="tab3" class="tab-content">
         <div class="slide">
-            <h2>📢 진단 과정</h2>
+            <h2>📢 광고·PR 분야</h2>
 
             <div class="grid">
                 <div class="card">
-                    <h4>핵심 검사</h4>
+                    <h4>핵심 교과목</h4>
                     <ul>
-                        <li>신경심리검사</li>
-                        <li>뇌 영상 검사 (MRI, CT)</li>
-                        <li>혈액 검사</li>
-                        <li>일상생활 평가</li>
-                        <li>가족 면담</li>
-                        <li>인지 기능 평가</li>
+                        <li>광고학개론</li>
+                        <li>PR학개론</li>
+                        <li>카피라이팅</li>
+                        <li>PR전략</li>
+                        <li>광고기획</li>
+                        <li>위기커뮤니케이션</li>
                     </ul>
                 </div>
+
                 <div class="card">
-                    <h4>실습 중심 검사</h4>
+                    <h4>실습 중심 과목</h4>
                     <ul>
-                        <li>기억력 검사 (MMSE, MoCA)</li>
-                        <li>일상생활 능력 평가</li>
-                        <li>종합 인지 기능 검사</li>
+                        <li>광고홍보영상제작</li>
+                        <li>캠페인기획 워크숍</li>
+                        <li>마케팅커뮤니케이션 사례분석</li>
                     </ul>
                 </div>
             </div>
 
             <div class="box">
-                <h3>진단 후 지원 분야</h3>
-                <p>신경과 전문의, 정신건강의학과 전문의, 작업치료사, 사회복지사, 간호사, 심리상담사 등 다양한 전문가의 협력으로 환자와 가족을 지원합니다.</p>
-            </div>
-
-            <div class="highlight">
-                <p>전문가의 역할: 의사, 간호사, 작업치료사, 사회복지사 등 여러 전문가의 협업으로 완성되며, 진단, 치료, 돌봄, 지원을 통해 환자와 가족을 연결합니다.</p>
+                <h3>졸업 후 진출 분야</h3>
+                <p>광고기획자(AE), 카피라이터(CW), 미디어플래너(MP), PR전문가, 마케팅 매니저 등</p>
             </div>
         </div>
     </div>
 
-    <!-- TREATMENT -->
-    <div id="tab-treatment" class="tab-content">
+    <!-- TAB 4 -->
+    <div id="tab4" class="tab-content">
         <div class="slide">
-            <h2>🎬 치료 방법</h2>
+            <h2>🎬 영상콘텐츠 분야</h2>
 
             <div class="card">
                 <h4>분야 소개</h4>
-                <p>약물 치료, 인지 훈련, 운동 치료, 작업 치료 등 다양한 방법을 통한 증상 관리를 다룹니다.</p>
-                <p>개인별 맞춤 치료 계획을 수립하며, 정기적인 평가로 치료 효과를 확인합니다.</p>
+                <p>방송·광고·OTT·유튜브 등 다양한 플랫폼을 위한 영상 기획·촬영·편집·후반작업을 실습 중심으로 학습합니다.</p>
             </div>
 
-            <h3>관련 치료법</h3>
             <div class="box">
+                <h3>관련 과목</h3>
                 <ul>
-                    <li>약물 치료 (콜린에스테라아제 억제제 등)</li>
-                    <li>인지 훈련 프로그램</li>
-                    <li>운동 치료 (유산소 운동, 근력 운동)</li>
-                    <li>작업 치료 (일상생활 훈련)</li>
+                    <li>영상제작기초</li>
+                    <li>디지털영상제작</li>
+                    <li>커뮤니케이션 디자인</li>
+                    <li>광고홍보영상제작</li>
                 </ul>
             </div>
 
             <div class="highlight">
                 <h3>진로 방향</h3>
-                <p>치매안심센터, 신경과 클리닉, 재활의학과, 요양시설 등에서 전문적인 치료와 관리를 받을 수 있습니다.</p>
+                <p>유튜브 PD, 영상기획자, 촬영감독, OTT 콘텐츠 제작자 등</p>
             </div>
         </div>
     </div>
 
-    <!-- PREVENTION -->
-    <div id="tab-prevention" class="tab-content">
+    <!-- TAB 5 -->
+    <div id="tab5" class="tab-content">
         <div class="slide">
-            <h2>🕶️ 예방 및 관리</h2>
+            <h2>🕶️ 실감미디어(XR)</h2>
 
-            <h3>핵심 개념</h3>
             <div class="box">
-                <p>규칙적인 운동, 건강한 식습관, 사회활동, 인지 활동 등을 통한 예방적 생활 습관을 다룹니다.</p>
+                <h3>핵심 개념</h3>
+                <p>AR/VR/MR 기반의 인터랙티브 콘텐츠 제작을 학습하고 실감형 스토리텔링을 탐구합니다.</p>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <h4>규칙적 운동</h4>
-                    <p>주 3회 이상 유산소 운동</p>
+                    <h4>VR (가상현실)</h4>
+                    <p>전면 몰입형 가상세계 경험</p>
                 </div>
                 <div class="card">
-                    <h4>건강한 식단</h4>
-                    <p>지중해식 식단, 과일·채소 섭취</p>
+                    <h4>AR (증강현실)</h4>
+                    <p>현실 화면 위 정보 오버레이</p>
                 </div>
                 <div class="card">
-                    <h4>사회활동</h4>
-                    <p>친구 만남, 동호회 활동</p>
+                    <h4>MR (혼합현실)</h4>
+                    <p>현실과 가상의 상호작용 콘텐츠 제작</p>
                 </div>
             </div>
 
             <div class="highlight">
                 <h3>융합 분야</h3>
-                <p>운동학, 영양학, 심리학, 사회복지학 등 다양한 영역과 융합하여 종합적인 예방 전략을 수립할 수 있습니다.</p>
+                <p>의학, 스포츠, 교육, 예술, 게임 등 다양한 영역에서 활용</p>
             </div>
         </div>
     </div>
 
-    <!-- CARE -->
-    <div id="tab-care" class="tab-content">
+        <!-- TAB 6 -->
+    <div id="tab6" class="tab-content">
         <div class="slide">
-            <h2>💊 돌봄과 간호</h2>
+            <h2>💊 헬스커뮤니케이션</h2>
 
             <div class="card">
                 <h4>분야 소개</h4>
-                <p>환자와 보호자를 위한 돌봄 정보와 간호 방법을 안내하여 삶의 질 향상을 돕는 분야입니다.</p>
+                <p>헬스커뮤니케이션은 의료·보건·공공 분야에서 건강 정보를 효과적으로 전달하고,
+                   대중의 건강 행동 변화를 이끌기 위한 커뮤니케이션 전략을 연구하는 학문입니다.</p>
             </div>
 
-            <h3>핵심 목표</h3>
             <div class="box">
+                <h3>핵심 목표</h3>
                 <ul>
-                    <li>환자의 안전한 생활 환경 조성</li>
-                    <li>일상생활 능력 유지 및 향상</li>
-                    <li>보호자 교육 및 지원</li>
-                    <li>정서적 안정 제공</li>
+                    <li>대중의 건강 인식 개선</li>
+                    <li>정확한 의료정보 전달</li>
+                    <li>공공 캠페인 기획 및 실행</li>
+                    <li>보건·의료 기관과의 소통 전략 수립</li>
                 </ul>
             </div>
 
             <div class="highlight">
                 <h3>진출 분야</h3>
-                <p>치매안심센터, 요양병원, 재가서비스, 보건소, 주간보호센터, 복지관 등에서 다양한 돌봄 서비스를 제공합니다.</p>
+                <p>보건복지부 홍보실, 질병관리청, 제약회사 홍보팀, 의료기관 홍보팀, 공공 캠페인 기획 등</p>
             </div>
         </div>
     </div>
 
-    <!-- SUPPORT -->
-    <div id="tab-support" class="tab-content">
+    <!-- TAB 7 -->
+    <div id="tab7" class="tab-content">
         <div class="slide">
-            <h2>💼 지원 및 복지 제도</h2>
+            <h2>💼 진로 및 취업 전망</h2>
 
-            <h3>대표 지원 분야</h3>
+            <h3>대표 진출 분야</h3>
             <div class="grid">
                 <div class="card">
-                    <h4>치매안심센터</h4>
-                    <p>무료 검진, 상담, 교육 프로그램</p>
+                    <h4>방송·언론</h4>
+                    <p>PD, 기자, 뉴스제작, 방송 프로그램 기획</p>
                 </div>
+
                 <div class="card">
-                    <h4>장기요양보험</h4>
-                    <p>방문 요양, 주야간 보호</p>
+                    <h4>광고·PR</h4>
+                    <p>AE, CW, AD, 디지털 마케팅 기획자</p>
                 </div>
+
                 <div class="card">
-                    <h4>치매치료관리비</h4>
-                    <p>약제비 지원</p>
+                    <h4>영상콘텐츠</h4>
+                    <p>유튜브 PD, 콘텐츠 프로듀서, OTT 콘텐츠 기획</p>
                 </div>
+
                 <div class="card">
-                    <h4>가족지원</h4>
-                    <p>보호자 교육, 심리 상담</p>
+                    <h4>헬스커뮤니케이션</h4>
+                    <p>공공 캠페인 기획, 의료 홍보, 공익 콘텐츠 제작</p>
                 </div>
             </div>
 
             <div class="box">
-                <h3>최근 지원 트렌드</h3>
-                <p>국가치매책임제를 통한 지원 확대, 치매안심마을 조성, 디지털 치매 예방 프로그램 등 다양한 정책이 시행되고 있습니다.</p>
+                <h3>최근 취업 트렌드</h3>
+                <p>OTT·디지털콘텐츠·AI커뮤니케이션 분야 취업률 증가</p>
+                <p>광고·언론·공공 커뮤니케이션 등 다양한 산업군으로 진출 확대</p>
             </div>
         </div>
     </div>
 
-    <!-- AI -->
-    <div id="tab-ai" class="tab-content">
+    <!-- TAB 8 -->
+    <div id="tab8" class="tab-content">
         <div class="slide">
-            <h2>🤖 AI·데이터 기반 치매 관리</h2>
+            <h2>🌍 광고의 사회적 의미</h2>
+
+            <div class="card">
+                <h4>광고의 역할</h4>
+                <p>광고는 단순한 상업적 메시지를 넘어 사회적 의제를 형성하고 문화, 정책, 공공 문제 해결에 중요한 역할을 합니다.</p>
+            </div>
 
             <div class="box">
-                <h3>AI와 데이터 기반 관리</h3>
-                <p>AI와 데이터 기반 치매 예방 및 관리는 미래 핵심 기술입니다.</p>
+                <h3>광고의 다양한 기능</h3>
+                <ul>
+                    <li><strong>상업적 기능:</strong> 브랜드와 소비자를 연결</li>
+                    <li><strong>공익적 기능:</strong> 안전 캠페인·환경 캠페인 등 공공 메시지 전달</li>
+                    <li><strong>문화적 기능:</strong> 유행, 트렌드, 라이프스타일 반영</li>
+                    <li><strong>국가적 기능:</strong> 국가 이미지, 공공 정책 홍보</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <p>광고는 사회 전반과 끊임없이 상호작용하며, 윤리적이고 창의적인 커뮤니케이션은 더 나은 사회를 만드는 데 기여합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 9 -->
+    <div id="tab9" class="tab-content">
+        <div class="slide">
+            <h2>🤖 AI·데이터 커뮤니케이션</h2>
+
+            <div class="box">
+                <h3>AI 시대의 핵심 역량</h3>
+                <p>AI와 데이터는 현대 커뮤니케이션 전략의 중심이며, 개인화된 콘텐츠 제공과 데이터 기반 기획을 가능하게 합니다.</p>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <h4>데이터 분석</h4>
-                    <p>인지 기능 데이터, 행동 패턴 분석</p>
+                    <h4>미디어 데이터 분석</h4>
+                    <p>소셜 데이터 분석, 소비자 행동 분석, 시청률·트래픽 분석</p>
                 </div>
+
                 <div class="card">
-                    <h4>AI 훈련</h4>
-                    <p>AI 기반 인지 훈련, 맞춤형 치료</p>
+                    <h4>AI 스토리텔링</h4>
+                    <p>AI 기반 콘텐츠 제작, 생성형 AI 도구 활용</p>
                 </div>
+
                 <div class="card">
-                    <h4>예측 알고리즘</h4>
-                    <p>조기 진단 알고리즘, 예측 모델</p>
+                    <h4>추천 알고리즘 이해</h4>
+                    <p>유튜브·OTT 알고리즘을 활용한 최적화 전략</p>
                 </div>
             </div>
 
             <div class="highlight">
-                <p>미래의 치매 관리는 기술과 돌봄을 융합하여 데이터 기반의 효과적인 치료 전략을 수립할 수 있어야 합니다.</p>
+                <p>미디어 전문가에게 필요한 핵심 능력: 기술 이해력 + 창의성 + 데이터 활용력</p>
             </div>
         </div>
     </div>
 
-    <!-- CASES -->
-    <div id="tab-cases" class="tab-content">
+    <!-- TAB 10 -->
+    <div id="tab10" class="tab-content">
         <div class="slide">
-            <h2>🎓 관리 사례</h2>
+            <h2>🎓 졸업생 취업 사례</h2>
 
-            <div class="card">
-                <h4>📰 조기 발견 사례</h4>
-                <p>정기 검진을 통해 경도인지장애를 조기 발견하고, 적극적인 인지 훈련과 운동 치료로 증상 진행을 늦춘 사례들</p>
-                <p><strong>역할:</strong> 정기 검진, 인지 훈련, 운동 프로그램 참여, 약물 치료 등</p>
+            <h3>📰 언론·방송 분야</h3>
+            <div class="box">
+                <p><strong>동아일보, 중앙일보, 뉴시스, JTBC, MBC, CJ ENM</strong></p>
+                <p>역할: 기자, 뉴스 에디터, 방송 제작, 콘텐츠 기획</p>
             </div>
 
-            <div class="card">
-                <h4>📢 가족 돌봄 사례</h4>
-                <p>가족의 헌신적인 돌봄과 전문가의 지원으로 환자가 안정된 일상생활을 유지한 사례들</p>
-                <p><strong>역할:</strong> 가족 교육, 주간보호센터 이용, 정서적 지지, 안전한 환경 조성 등</p>
+            <h3>📢 광고·PR·마케팅 분야</h3>
+            <div class="box">
+                <p><strong>제일기획, 이노션, TBWA, HS애드, 오리콤</strong></p>
+                <p>역할: AE, CW, AD, 디지털 마케팅 기획</p>
             </div>
 
-            <div class="card">
-                <h4>🎬 예방 프로그램 참여 사례</h4>
-                <p>치매안심센터의 예방 프로그램에 참여하여 건강한 노후를 준비한 사례들</p>
-                <p><strong>역할:</strong> 두뇌 건강 교실, 운동 프로그램, 영양 교육, 사회활동 등</p>
+            <h3>🎬 영상·OTT·콘텐츠 분야</h3>
+            <div class="box">
+                <p><strong>넷플릭스 코리아, 왓챠, 유튜브 크리에이티브 파트너사</strong></p>
+                <p>역할: PD, 콘텐츠 프로듀서, 영상기획자</p>
             </div>
 
-            <div class="card">
-                <h4>💊 통합 돌봄 사례</h4>
-                <p>치매안심센터, 보건소, 복지관이 협력하여 통합 돌봄 서비스를 제공한 사례들</p>
-                <p><strong>역할:</strong> 통합 사례 관리, 방문 건강 관리, 가족 지원, 지역 자원 연계 등</p>
+            <h3>💊 헬스커뮤니케이션·공공기관</h3>
+            <div class="box">
+                <p><strong>질병관리청, 국민건강보험공단, 보건복지부</strong></p>
+                <p>역할: 공공 캠페인 기획, 의료홍보 콘텐츠 제작</p>
             </div>
         </div>
     </div>
 
-    <!-- ADVANTAGES -->
-    <div id="tab-advantages" class="tab-content">
+        <!-- TAB 11 -->
+    <div id="tab11" class="tab-content">
         <div class="slide">
-            <h2>✨ 조기 관리의 장점</h2>
+            <h2>✨ 미디어커뮤니케이션 전공의 강점</h2>
 
             <div class="grid">
                 <div class="card">
                     <h4>이론과 실무의 균형</h4>
-                    <p>체계적인 의학 지식과 실무 중심 돌봄 기술의 조화</p>
+                    <p>체계적인 이론교육 + 실무 중심 프로젝트로 균형 잡힌 학습</p>
                 </div>
+
                 <div class="card">
-                    <h4>전문적 지원</h4>
-                    <p>현장 전문가 협력, 의료기관 연계 프로그램</p>
+                    <h4>산업 친화적 교육</h4>
+                    <p>현업 전문가 특강, 기업 프로젝트, 산학협력 프로그램 운영</p>
                 </div>
+
                 <div class="card">
-                    <h4>최신 트렌드 반영</h4>
-                    <p>최신 치매 치료 트렌드를 반영한 관리 설계</p>
+                    <h4>트렌드 연계 커리큘럼</h4>
+                    <p>미디어·광고·AI·콘텐츠 트렌드를 반영한 실전 중심 커리큘럼</p>
                 </div>
+
                 <div class="card">
-                    <h4>융합형 지원 선택</h4>
-                    <p>의료·요양·복지·상담 등 다양한 분야 선택 가능</p>
+                    <h4>융합적 진로 확장성</h4>
+                    <p>방송·광고·영상·헬스·데이터 등 다양한 분야로 진출 가능</p>
                 </div>
             </div>
 
             <div class="box">
-                <h3>통합 치료 프로그램</h3>
-                <p>환자들은 인지 훈련, 운동, 작업 치료, 사회활동 프로그램에 참여하며 인지 기능, 신체 건강, 정서적 안정, 사회성 역량을 강화합니다.</p>
+                <h3>창의융합 프로젝트</h3>
+                <p>영상·광고·뉴스·XR 콘텐츠 제작 프로젝트를 수행하며 기획력, 팀워크, 스토리텔링 역량을 강화합니다.</p>
             </div>
         </div>
     </div>
 
-    <!-- FEATURES -->
-    <div id="tab-features" class="tab-content">
+    <!-- TAB 12 -->
+    <div id="tab12" class="tab-content">
         <div class="slide">
-            <h2>🏫 지원 체계의 특징과 비전</h2>
+            <h2>🏫 학과의 특징과 비전</h2>
 
             <div class="card">
-                <h4>지원 목표</h4>
-                <p>치매안심센터, 의료기관, 복지기관 등에서 통합적이고 체계적인 돌봄 서비스를 제공하는 실무 중심 지원 프로그램을 운영합니다.</p>
+                <h4>교육 목표</h4>
+                <p>미디어 산업 전반과 공공·헬스 영역에서 활약할 수 있는 융합형 인재 양성을 목표로 합니다.</p>
             </div>
 
             <div class="box">
                 <h3>우리의 비전</h3>
-                <p>치매 환자와 가족이 존엄하고 행복한 삶을 영위할 수 있도록 지원하는 따뜻한 사회의 리더를 목표로 합니다.</p>
+                <p>미디어·기술·사회적 가치를 연결하는 미래형 커뮤니케이션 리더 양성</p>
             </div>
 
             <div class="grid">
                 <div class="card">
                     <h4>창의성</h4>
-                    <p>독창적인 치료 프로그램 개발</p>
+                    <p>새로운 아이디어·콘텐츠 개발 능력</p>
                 </div>
+
                 <div class="card">
                     <h4>전문성</h4>
-                    <p>분야별 심화 학습과 실무 역량</p>
+                    <p>핵심 분야의 깊이 있는 학습과 실무 역량</p>
                 </div>
+
                 <div class="card">
                     <h4>융합성</h4>
-                    <p>다양한 분야와의 협업과 융합</p>
+                    <p>다양한 분야와의 협업 및 융합적 사고</p>
                 </div>
+
                 <div class="card">
                     <h4>윤리성</h4>
-                    <p>사회적 책임과 윤리적 돌봄</p>
+                    <p>미디어 윤리와 사회적 책임 기반의 커뮤니케이션 실천</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- QUIZ -->
-    <div id="tab-quiz" class="tab-content">
+    <!-- TAB 13 (퀴즈) -->
+    <div id="tab13" class="tab-content">
         <div class="slide">
             <h2>🧠 이해 문제</h2>
 
             <div class="quiz-container">
                 <div class="card" style="margin-bottom: 30px;">
                     <h4>답변자 정보</h4>
-                    <input type="text" id="quiz-studentName" placeholder="이름을 입력하세요"
+                    <input type="text" id="studentName" placeholder="이름을 입력하세요"
                            style="width: 100%; padding: 12px; font-size: 1.1em; border: 2px solid #dee2e6; border-radius: 8px; margin-top: 10px;">
                     <p style="font-size: 0.9em; color: #6c757d; margin-top: 10px;">
                         * 답변 결과가 AI 에이전트 지식베이스에 저장됩니다.
@@ -540,142 +530,131 @@
                 </div>
 
                 <div class="quiz-question">
-                    Q. 경도인지장애 조기 발견의 핵심 역할은 무엇인가요?
+                    Q. 광고기획자(AE)의 핵심 역할은 무엇인가요?
                 </div>
 
-                <div class="quiz-options" id="quiz-options-set1">
-                    <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
-                        <strong>① </strong>완전한 치료만 가능
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="checkAnswer(this, false)">
+                        <strong>① </strong>디자인 작업만 수행한다
                     </div>
-                    <div class="quiz-option" onclick="checkAnswer(this, true, 1)">
-                        <strong>② </strong>증상 진행 지연 및 삶의 질 관리
+                    <div class="quiz-option" onclick="checkAnswer(this, true)">
+                        <strong>② </strong>전략 수립 및 프로젝트 관리(고객·내부 조율)
                     </div>
-                    <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
-                        <strong>③ </strong>의료비 지원만 전담
+                    <div class="quiz-option" onclick="checkAnswer(this, false)">
+                        <strong>③ </strong>매체 구매만 담당한다
                     </div>
-                    <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
-                        <strong>④ </strong>입원 치료만 수행
+                    <div class="quiz-option" onclick="checkAnswer(this, false)">
+                        <strong>④ </strong>카피 문장만 작성한다
                     </div>
                 </div>
 
-                <div id="feedback1" class="quiz-feedback">
-                    <div id="feedback-text1"></div>
+                <div id="feedback" class="quiz-feedback">
+                    <div id="feedback-text"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <h3>🧠 경도인지장애·초기치매 정보 안내</h3>
-        <p>건강한 노후를 위한 인지건강 가이드</p>
-    </footer>
+    <!-- TAB 14 -->
+    <div id="tab14" class="tab-content">
+        <div class="slide cover">
+            <h1>감사합니다</h1>
+            <h2>🎓 미디어커뮤니케이션전공</h2>
+            <br><br>
+            <p>미래융합대학 헬스케어융합학부</p>
+            <p>차의과학대학교</p>
+            <br>
+            <p>📧 문의: 미디어커뮤니케이션학과 사무실</p>
+            <p>🌐 전공 홈페이지: https://comm.cha.ac.kr/</p>
+        </div>
+    </div>
 </div>
 
-<!-- =========================== -->
-<!-- SCRIPT: 탭 + 퀴즈 + Netlify 저장 -->
-<!-- =========================== -->
+
+<!-- ============================= -->
+<!-- 🔧 Script: Tabs + Quiz + Netlify 저장 -->
+<!-- ============================= -->
 <script>
 function openTab(evt, tabName) {
-    document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
-    document.querySelectorAll(".tab-button").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
     document.getElementById(tabName).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
 
 async function updateKnowledge(studentName, question, answer, isCorrect) {
     try {
-        const response = await fetch("/.netlify/functions/update-knowledge", {
+        const res = await fetch("/.netlify/functions/update-knowledge", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ studentName, question, answer, isCorrect }),
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ studentName, question, answer, isCorrect })
         });
 
-        const result = await response.json();
-        return result.success;
-    } catch (err) {
-        console.error("저장 오류:", err);
+        return res.ok;
+    } catch (e) {
+        console.error("저장 오류:", e);
         return false;
     }
 }
 
-function checkAnswer(element, isCorrect, quizSetId) {
-    const studentName = document.getElementById("quiz-studentName").value.trim();
+function checkAnswer(element, isCorrect) {
+    const studentName = document.getElementById("studentName").value.trim();
     if (!studentName) {
-        alert("이름을 먼저 입력하세요!");
+        alert("이름을 먼저 입력해주세요!");
         return;
     }
 
-    const optionsContainer = document.getElementById(`quiz-options-set${quizSetId}`);
-    if (optionsContainer.querySelector(".disabled")) return;
+    const options = document.getElementsByClassName("quiz-option");
+    for (let opt of options) opt.classList.add("disabled");
 
-    const selectedAnswer = element.textContent.trim();
-    const question = "경도인지장애 조기 발견의 핵심 역할은 무엇인가요?";
-
-    const options = optionsContainer.getElementsByClassName("quiz-option");
-    for (let option of options) option.classList.add("disabled");
-
-    const feedback = document.getElementById(`feedback${quizSetId}`);
-    const feedbackText = document.getElementById(`feedback-text${quizSetId}`);
-
-    const correctAnswerText = "② 증상 진행 지연 및 삶의 질 관리";
+    const feedback = document.getElementById("feedback");
+    const feedbackText = document.getElementById("feedback-text");
+    const selected = element.textContent.trim();
+    const question = "광고기획자(AE)의 핵심 역할은 무엇인가요?";
 
     if (isCorrect) {
         element.classList.add("correct");
         feedback.className = "quiz-feedback correct show";
         feedbackText.innerHTML =
-            '<strong>✓ 정답입니다!</strong><br><br>' +
-            '경도인지장애는 진행을 늦추고 삶의 질을 관리하는 것이 조기 발견의 핵심 목표입니다.<br><br>' +
-            '<em style="color: #28a745;">답변을 저장하고 있습니다...</em>';
+            "✓ 정답입니다!<br><br>" +
+            "AE는 전략 수립 및 프로젝트 관리(고객·내부 조율)를 담당하는 핵심 역할입니다.<br><br>" +
+            "<em style='color:#28a745'>답변 저장 중...</em>";
     } else {
         element.classList.add("incorrect");
         feedback.className = "quiz-feedback incorrect show";
         feedbackText.innerHTML =
-            '<strong>✗ 아쉽습니다.</strong><br><br>' +
-            '정답은 <strong>②번</strong>입니다.<br><br>' +
-            '조기 발견은 치매로의 진행을 늦추고(지연) 환자와 가족의 삶의 질을 관리하는 데 가장 중요합니다.<br><br>' +
-            '<em style="color: #dc3545;">답변을 저장하고 있습니다...</em>';
+            "✗ 오답입니다.<br><br>" +
+            "정답은 <strong>②번</strong>입니다!<br><br>" +
+            "<em style='color:#dc3545'>답변 저장 중...</em>";
 
-        for (let option of options) {
-            if (option.textContent.includes(correctAnswerText)) {
-                option.classList.add("correct");
-            }
+        for (let opt of options) {
+            if (opt.textContent.includes("②")) opt.classList.add("correct");
         }
     }
 
-    updateKnowledge(studentName, question, selectedAnswer, isCorrect)
+    updateKnowledge(studentName, question, selected, isCorrect)
         .then(success => {
-            const currentHTML = feedbackText.innerHTML;
-            if (success) {
-                feedbackText.innerHTML = currentHTML.replace(
-                    "답변을 저장하고 있습니다...",
-                    "✅ 답변이 AI 에이전트에 저장되었습니다!"
-                );
-            } else {
-                feedbackText.innerHTML = currentHTML.replace(
-                    "답변을 저장하고 있습니다...",
-                    "⚠️ 답변 저장 중 오류가 발생했습니다."
-                );
-            }
+            const current = feedbackText.innerHTML;
+            feedbackText.innerHTML = current.replace(
+                "답변 저장 중...",
+                success ? "✅ 저장 완료!" : "⚠ 저장 오류 발생"
+            );
         });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("tab-intro").classList.add("active");
-});
 </script>
 
-<!-- =========================== -->
-<!-- D-ID AI Agent -->
-<!-- =========================== -->
+<!-- ============================= -->
+<!-- ✔ D-ID AI Agent (통일된 코드) -->
+<!-- ============================= -->
 <script type="module"
-        src="https://agent.d-id.com/v2/index.js"
-        data-mode="fabio"
-        data-client-key="YXV0aDB8NjhjY2YzNjE1YjE2NWQ4N2YxOTQ3YWYwOmFSbndyWDlFRVJ4WE1lNUh4aHFaNA=="
-        data-agent-id="v2_agt_XcqQClH_"
-        data-name="did-agent"
-        data-monitor="true"
-        data-orientation="horizontal"
-        data-position="right">
+      src="https://agent.d-id.com/v2/index.js"
+      data-mode="fabio"
+      data-client-key="Z29vZ2xlLW9hdXRoMnwxMDgzMTAwNDAwMDE0NDUwOTc2NzA6eEVIcGFhMWJ3c1RfMlFDaEduTXlt"
+      data-agent-id="v2_agt_IGrxzrfY"
+      data-name="did-agent"
+      data-monitor="true"
+      data-orientation="horizontal"
+      data-position="right">
 </script>
 
 </body>
